@@ -1,0 +1,20 @@
+{
+  "name": "trc_entrega_1",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/romuloallc/trc_entrega_1.git",
+  "author": "Rômulo <romulo.allc@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon src/server,js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.7.1",
+    "mongoose-auto-increment": "^5.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.2",
+    "sucrase": "^3.10.1"
+  }
+}
