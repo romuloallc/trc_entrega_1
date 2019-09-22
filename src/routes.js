@@ -9,6 +9,8 @@ routes.get("/disciplinas", disciplinaController.index)
 //POST
 routes.post("/disciplinas", disciplinaController.store)
 //PUT
+routes.put("/disciplinas/:codigo", disciplinaController.update)
 //DELETE
+routes.delete("/disciplins/:codigo", disciplinaController.delete)
 
 export default routes;

@@ -23,17 +23,48 @@ class disciplinaController {
           return res.status(400).json({ message: "Disciplina já cadastrada!" });
         }
         try {
-          const disciplina = await disciplina.create(req.body);
+          const disc = await disciplina.create(req.body);
 
-          if (!disciplina) {
+          if (!disc) {
             return res.status(400).json({ message: "Código, Nome, Professor e Departamento são necessários " });
         }
-        return res.status(201).json({ disciplina });
+        return res.status(201).json({ disc });
 
         } catch (err) {
           return res.status(400).json({ error: err });
         }
     }
+
+    // UPDATE
+    async update(req, res) {
+        const discToUpdate = await disciplina.findOne({
+          codigo: req.params.codigo
+        });
+    
+        if (!discToUpdate) {
+          return res.status(400).json({ error: "Disciplina não existe." });
+        }
+    
+        const disc = await disciplina.updateOne(req.body);
+    
+        return res.status(201).json({ message: "Disciplina atualizada." });
+      }
+
+    // DELETE
+    async delete(req, res) {
+      const discToDelete = await disciplina.findOne({
+        codigo: req.params.codigo
+      });
+
+      if (!discToDelete) {
+        return res.status(400).json({ error: "Disciplina não existe." });
+      }
+
+      const disc = await disciplina.deleteOne({ codigo: req.params.codigo });
+
+      return res.status(204).json({ message: "Disciplina deletada" });
+  }
+    
 }
 
 export default new disciplinaController();

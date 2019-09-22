@@ -4,6 +4,7 @@ import autoIncrement from 'mongoose-auto-increment'
 import conn from "../../config/dbConnection"
 
 mongoose.connect(conn.url)
+mongoose.set('useFindAndModify', false);
 autoIncrement.initialize(mongoose)
 
 const disciplinaSchema = new mongoose.Schema({
@@ -19,7 +20,7 @@ const disciplinaSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    departament: {
+    departamento: {
         type: String,
         required: true
     }
