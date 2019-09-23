@@ -38,14 +38,14 @@ class disciplinaController {
     // UPDATE
     async update(req, res) {
         const discToUpdate = await disciplina.findOne({
-          codigo: req.params.codigo
+          id: req.params.id
         });
     
         if (!discToUpdate) {
-          return res.status(400).json({ error: "Disciplina não existe." });
+          return res.status(400).json({ error: "ID de disciplina não existente." });
         }
     
-        const disc = await disciplina.updateOne(req.body);
+        const disc = await discToUpdate.update(req.body);
     
         return res.status(201).json({ message: "Disciplina atualizada." });
       }
@@ -53,14 +53,14 @@ class disciplinaController {
     // DELETE
     async delete(req, res) {
       const discToDelete = await disciplina.findOne({
-        codigo: req.params.codigo
+        id: req.params.id
       });
 
       if (!discToDelete) {
         return res.status(400).json({ error: "Disciplina não existe." });
       }
 
-      const disc = await disciplina.deleteOne({ codigo: req.params.codigo });
+      const disc = await discToDelete.delete({ id: req.params.id });
 
       return res.status(204).json({ message: "Disciplina deletada" });
   }
