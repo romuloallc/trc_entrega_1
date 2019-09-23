@@ -64,7 +64,6 @@ class disciplinaController {
 
       return res.status(204).json({ message: "Disciplina deletada" });
   }
-    
 }
 
 export default new disciplinaController();
