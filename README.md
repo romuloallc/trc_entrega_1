@@ -3,12 +3,14 @@ trc_entrega_1
 Essa atividade consiste em criar uma pequena API que persista no banco de dados informações sobre
 disciplinas em que você está matriculado este semestre. 
 Utilizando:
+
     "nodejs": "10.16.1"
     "express": "^4.17.1",
     "mongoose": "^5.7.1",
     "mongoose-auto-increment": "^5.0.1"
     "nodemon": "^1.19.2",
     "sucrase": "^3.10.1" 
+    
 Criando uma model e um controller, cada um em seu respectivo diretório na pasta /src.
 
 Para começar faça um clone em vossa máquina:
